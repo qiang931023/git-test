@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  //resolve,reject本身就是一个函数
+ // 链式编程
+    new Promise((resolve,reject)=>{
+      //第一次网络请求
+      setTimeout(()=>{
+        resolve()
+      },1000)
+
+    }).then(()=>{
+      //第一次处理的代码
+        console.log('hello word');
+        console.log('hello word');
+        console.log('hello word');
+        console.log('hello word');
+        console.log('hello word');
+
+        return new Promise((resolve,reject)=>{
+          //第二次网络请求
+          setTimeout(()=>{
+            resolve()
+          },1000)
+        }).then(()=>{
+          //第二次处理的代码
+            console.log('hello Vue');
+            console.log('hello Vue');
+            console.log('hello Vue');
+            console.log('hello Vue');
+            console.log('hello Vue');
+            console.log('hello Vue');
+
+            return new Promise((resolve,reject)=>{
+              //第三次网络请求
+              setTimeout(()=>{
+                resolve()
+              },1000)
+            }).then(()=>{
+              //第三次处理的代码
+                console.log('hello Python');
+                console.log('hello Python');
+                console.log('hello Python');
+                console.log('hello Python');
+                console.log('hello Python');
+                console.log('hello Python');
+                console.log('hello Python');
+
+            })
+        })
+
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+//resolve,reject本身就是一个函数
+  //链式编程
+//  new Promise((resolve,reject)=>{
+//    //第一次网络请求
+//    setTimeout(()=>{
+//      resolve()
+//    },1000)
+//
+//  }).then(()=>{
+//    //第一次处理的代码
+//      console.log('hello word');
+//      console.log('hello word');
+//      console.log('hello word');
+//      console.log('hello word');
+//      console.log('hello word');
+//
+//      return new Promise((resolve,reject)=>{
+//        //第二次网络请求
+//        setTimeout(()=>{
+//          resolve()
+//        },1000)
+//      }).then(()=>{
+//        //第二次处理的代码
+//          console.log('hello Vue');
+//          console.log('hello Vue');
+//          console.log('hello Vue');
+//          console.log('hello Vue');
+//          console.log('hello Vue');
+//          console.log('hello Vue');
+//
+//          return new Promise((resolve,reject)=>{
+//            //第三次网络请求
+//            setTimeout(()=>{
+//              resolve()
+//            },1000)
+//          }).then(()=>{
+//            //第三次处理的代码
+//              console.log('hello Python');
+//              console.log('hello Python');
+//              console.log('hello Python');
+//              console.log('hello Python');
+//              console.log('hello Python');
+//              console.log('hello Python');
+//              console.log('hello Python');
+//
+//          })
+//      })
+//
+//  })
+  //什么时候使用Promise？
+  //一般情况下使用异步操作时，使用promise对这个异步操作进行封装
+  new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+      //成功调用resolve
+//      resolve('hello')
+      //失败调用reject
+      reject('error message')
+    },1000)
+  }).then((data)=>{
+    console.log(data);
+    console.log(data);
+    console.log(data);
+  }).catch((err)=>{
+    console.log(err);
+    console.log('1111');
+    console.log('1111');
+    console.log('1111');
+    console.log('1111');
+    console.log('1111');
+  })
+</script>
+</body>
+</html>
